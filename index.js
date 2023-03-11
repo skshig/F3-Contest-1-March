@@ -49,18 +49,11 @@ function race100m_scores() {
 }
 function LongJump(score){
     setTimeout(function(){
-        if(user === "red"){
-            score.red = (score.red) +  150;
-        }
-        if(user === "yellow"){
-            score.yellow = (score.yellow) +  150;
-        }
-        if(user === "green"){
-            score.green = (score.green) +  150;
-        }
-        if(user === "blue"){
-            score.blue = (score.blue) +  150;
-        }},2000)
+        user = long_jump_winner();
+        score[user] += 150;
+        HighJump(score,AwardCeremony)
+        },2000)
+
 }
 function long_jump_winner() {
     players = ["red", "yellow", "blue", "green"];
@@ -86,8 +79,6 @@ function HighJump(score,AwardCeremony){
             if(user == "" || user == null){
             console.log("Event was cancelled");
         }
-        // const score =
-        HighJump(score,AwardCeremony);
         }
     AwardCeremony(score);
 }
