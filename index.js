@@ -49,30 +49,46 @@ function race100m_scores() {
 }
 function LongJump(score){
     setTimeout(function(){
-    const user = prompt("What colour secured the highest jump?")
-    if(user === "red"){
-        score.red = (score.red) +  100;
-    }
-    if(user === "yellow"){
-        score.yellow = (score.yellow) +  100;
-    }
-    if(user === "green"){
-        score.green = (score.green) +  100;
-    }
-    if(user === "blue"){
-        score.blue = (score.blue) +  100;
-    }
-    else {
-        if(user == "" || user == null){
-        console.log("Event was cancelled");
-    }
-    // const score =
-    HighJump(score,AwardCeremony);
-    }
-    },2000)
+        if(user === "red"){
+            score.red = (score.red) +  150;
+        }
+        if(user === "yellow"){
+            score.yellow = (score.yellow) +  150;
+        }
+        if(user === "green"){
+            score.green = (score.green) +  150;
+        }
+        if(user === "blue"){
+            score.blue = (score.blue) +  150;
+        }},2000)
 }
+function long_jump_winner() {
+    players = ["red", "yellow", "blue", "green"];
+    const winner_index = Math.floor(Math.random() * players.length);
+    return players[winner_index];
+}
+
 function HighJump(score,AwardCeremony){
-    
+        const user = prompt("What colour secured the highest jump?")
+        if(user === "red"){
+            score.red = (score.red) +  100;
+        }
+        if(user === "yellow"){
+            score.yellow = (score.yellow) +  100;
+        }
+        if(user === "green"){
+            score.green = (score.green) +  100;
+        }
+        if(user === "blue"){
+            score.blue = (score.blue) +  100;
+        }
+        else {
+            if(user == "" || user == null){
+            console.log("Event was cancelled");
+        }
+        // const score =
+        HighJump(score,AwardCeremony);
+        }
     AwardCeremony(score);
 }
 function AwardCeremony(score){
